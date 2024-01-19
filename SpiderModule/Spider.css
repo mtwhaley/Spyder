@@ -1,0 +1,20 @@
+#spider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#spiderBody {
+    position: absolute;
+    top: calc(50% - 14vh);
+    left: calc(50% - 6vw);
+    width: 12vw;
+    height: 28vh;
+    border-radius: 50%;
+    background-color: #00ff00ff;
+    z-index: 1;
+}
