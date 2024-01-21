@@ -1,0 +1,42 @@
+#header {
+    position: absolute;
+    top: 5vh;
+    width: 100%;
+    height: 150px;
+    background-color: #5c5c5c;
+    margin: 0;
+    border: 0.4vh outset black;
+
+}
+#headerLogo {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border: 2px inset black;
+    border-radius: 50%;
+    top: -25px;
+    left: 5%;
+    background-color: black;
+    overflow: hidden;
+
+    /*
+    animation: rotateLogo 10s linear 0s infinite normal forwards;
+    */
+}
+
+#headerLogo img {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    top: 0;
+    left: 0;
+}
+
+@keyframes rotateLogo {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

@@ -7,14 +7,281 @@
     margin: 0;
     padding: 0;
 }
-
 #spiderBody {
     position: absolute;
-    top: calc(50% - 14vh);
-    left: calc(50% - 6vw);
-    width: 12vw;
-    height: 28vh;
-    border-radius: 50%;
-    background-color: #00ff00ff;
-    z-index: 1;
+    left: calc(50vw - 350px);
+    width: 700px;
+    height: 800px;
+    filter: hue-rotate(0);
+    z-index: 100;
+    
 }
+
+#spiderHead {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: black;
+    z-index: 101;
+    top: 625px;
+    left: calc(50vw - 75px);
+}
+
+#spiderLeftEye, #spiderRightEye {
+    position: absolute;
+    width: 75px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid black;
+    background-color: white;
+    z-index: 102;
+    animation: smallEyes 1s linear 0s 3 alternate forwards;
+    
+
+}
+#spiderLeftEye{
+    top: 625px;
+    left: calc(50vw - 75px);
+}
+#spiderRightEye{
+    top: 625px;
+    left: calc(50vw);
+}
+#spiderLeftPupil, #spiderRightPupil {
+    position: absolute;
+    width: 25px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: black;
+    z-index: 103;
+    top: 20%;
+}
+#spiderLeftPupil{
+    left: 20%;
+}
+#spiderRightPupil{
+    right: 20%;
+}
+
+
+
+#blinkBarTop, #blinkBarBottom {
+    width: 200px;
+    height: 60px;
+    position: absolute;
+    z-index: 104;
+    background-color: black;
+    left: calc(50vw - 100px);
+    
+    animation-delay: 1s;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+}
+#blinkBarTop {
+    top: 625px;
+    animation-name: blinkUp;
+    animation-direction: alternate;
+}
+#blinkBarBottom {
+    top: 685px;
+    animation-name: blinkDown;
+    animation-direction: alternate;
+}
+
+@keyframes smallEyes {
+    from{
+        transform: scaleY(0.5);
+    }
+    to {
+        transform: scaleY(1);
+    }
+    
+}
+
+
+
+@keyframes blinkUp {
+    from {
+        transform:
+            scaleY(1)
+            translateY(0)
+        
+        ;
+    }
+    to {
+        transform:
+            scaleY(0)
+            translateY(-400px)
+        ;
+    }
+    
+}
+@keyframes blinkDown {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(60px);
+    }
+}
+
+@keyframes upperLeftLegs {
+    from {
+        transform:
+            translateY(-30px)
+            translateX(0)
+            rotate(10deg)
+        ;
+
+    }
+    to {
+        transform:
+            translateY(50px)
+            translateX(10px)
+            rotate(0)
+        ;
+    }
+}
+
+@keyframes lowerLeftLegs {
+    from {
+        transform:
+            translateY(-30px)
+            translateX(0)
+            rotate(5deg)
+        ;
+
+    }
+    to {
+        transform:
+            translateY(50px)
+            translateX(10px)
+            rotate(-20deg)
+        ;
+    }
+
+}
+
+@keyframes upperRightLegs {
+    from {
+        transform:
+            translateY(-30px)
+            translateX(0)
+            rotate(-10deg)
+            scaleX(-1)
+        ;
+
+    }
+    to {
+        transform:
+            translateY(50px)
+            translateX(-10px)
+            rotate(0)
+            scaleX(-1)
+        ;
+    }
+}
+
+@keyframes lowerRightLegs {
+    from {
+        transform:
+            translateY(-30px)
+            translateX(0)
+            rotate(-5deg)
+            scaleX(-1)
+        ;
+
+    }
+    to {
+        transform:
+            translateY(50px)
+            translateX(-10px)
+            rotate(20deg)
+            scaleX(-1)
+        ;
+    }
+
+}
+
+
+#leg1, #leg2, #leg3, #leg4, #leg5, #leg6, #leg7, #leg8 {
+    position: absolute;
+    width: 800px;
+    height: 1000px;
+    z-index: 99;
+    
+    animation-timing-function: linear;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+
+#leg1, #leg2 {
+    animation-name: upperLeftLegs;
+}
+
+#leg3, #leg4 {
+    animation-name: lowerLeftLegs;
+}
+
+#leg5, #leg6 {
+    animation-name: upperRightLegs;
+}
+
+#leg7, #leg8 {
+    animation-name: lowerRightLegs;
+}
+
+
+#leg1 {
+    top: -200px;
+    left: calc(50vw - 700px);
+    animation-direction: alternate;
+}
+
+#leg2 {
+    top: -150px;
+    left: calc(50vw - 750px);
+    animation-direction: alternate-reverse;
+}
+
+#leg3 {
+    top: 0;
+    left: calc(50vw - 750px);
+    animation-direction: alternate;
+}
+
+#leg4 {
+    top: 100px;
+    left: calc(50vw - 725px);
+    animation-direction: alternate-reverse;
+}
+
+#leg5 {
+    top: -200px;
+    left: calc(50vw - 100px);
+    animation-direction: alternate-reverse;
+}
+
+#leg6 {
+    top: -150px;
+    left: calc(50vw - 50px);
+    animation-direction: alternate;
+}
+
+#leg7 {
+    top: 0;
+    left: calc(50vw - 50px);
+    animation-direction: alternate-reverse;
+}
+
+#leg8 {
+    top: 100px;
+    left: calc(50vw - 75px);
+    animation-direction: alternate;
+}
+
