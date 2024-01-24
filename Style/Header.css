@@ -18,12 +18,12 @@
 }
 #headerText {
     position: absolute;
-    top: 4vh;
+    bottom: 1vh;
     left: calc(20vw + 4%);
     font-size: 4vw;
     color: white;
     font-family: Arial, sans-serif;
-    text-shadow: 0.5vh 0.5vh black;
+    text-shadow: 3px 3px black;
     letter-spacing: 1vw;
     font-weight: bold;
     
