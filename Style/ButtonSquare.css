@@ -11,9 +11,12 @@
     left: 5vh;
     width: 75%;
     height: 35vh;
-    background-color: rgba(255,140,140, 0.7);
+    background-color: #586dd2;
     border-radius: 1vh;
     text-align: center;
+    color: white;
+    text-shadow: 0.3vh 0.3vh black;
+    font-size: 3vh;
     
 }
 
@@ -54,6 +57,6 @@
 
 
 #topSquare:hover, #bottomSquare:hover, #leftSquare:hover, #rightSquare:hover {
-    background-color:  rgb(255, 0, 0);
+    background-color:  #1c319c;
     border: 2px solid white;
 }
