@@ -2,14 +2,23 @@
     position: relative;
     width: 100%;
     height: 55vh;
-    margin-top: 10vh;
+    margin-top: 0;
+}
+
+@-webkit-keyframes expandLeft {
+    from {
+        width: 0;
+    }
+    to {
+        width: 75%;
+    }
 }
 
 #AlternatingText {
     position: absolute;
     top: 10vh;
     left: 5vh;
-    width: 75%;
+    width: 0;
     height: 35vh;
     background-color: #586dd2;
     border-radius: 1vh;
@@ -20,12 +29,25 @@
     
 }
 
+#negSquare {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    background-color: #242d4a;
+    top: 25%;
+    left: 25%;
+    color: white;
+    text-align: center;
+
+}
+
+
 #squareFrame{
     position: absolute;
-    height: 35vh;
-    width: 35vh;
-    right: 10vh;
-    top: 10vh;
+    height: 15vw;
+    width: 15vw;
+    right: 5vw;
+    top: calc(50% - 7.5vw);
     overflow: hidden;
 }
 #topSquare, #bottomSquare, #leftSquare, #rightSquare{

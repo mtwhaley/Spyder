@@ -29,11 +29,11 @@
     </div>
     <div id="headerSpacer"></div>
 
-
+    <!--
     <div class="slogan">
         <p style="text-shadow: 0.2vh 0.2vh black;"><i>You know of a better web manager than a spyder?</i></p>
     </div>
-
+    -->
 
 
     <div id="about">
@@ -41,34 +41,100 @@
             <img src="Images/GeoAbstract.jpg" alt="geo banner">
         </div>
         <div id="imageText">
-            <p style="text-shadow: 0.2vh 0.2vh black;">
-                Some catchy inspiring slogan here
-            </p>
+            <h1>
+                Natural web developers
+            </h1>
         </div>
     </div>
 
+    <div id="info">
 
-    <div id="buttonSquare">
-        <div id="AlternatingText">
-            <p id="selection1">We are here to help businesses and individuals with their web projects, websites, and web applications!</p>
-            <p id="selection2">Just like baking a cake, we develop from scratch! This allows full customization of whatever project you need!</p>
-            <p id="selection3">We design, develop, launch, maintain, and everything in between!</p>
-            <p id="selection4">Most importantly, we reasonably price our services while maintaining client satisfaction!</p>
+        <div id="buttonSquare">
+            <div id="AlternatingText">
+                <p id="selection1" hidden>
+                    We are here to help businesses and individuals with their web projects, websites, and web applications!<br><br>
+                    Not sure what the difference is? Don't worry about it! That's what we're here for!<br>
+                    If you need any help or have a job you need done that has anything to do with the net, we got you covered!<br><br>
+                    Head on over to get a quote for your project!
+                </p>
+                <p id="selection2" hidden>
+                    We fully customize to your needs!<br><br>
+                    Just like baking a cake, we develop from scratch! This allows full customization of whatever project you need done.<br><br>
+                    You want a turtle emblem? You got it!<br>
+                    You like tulips? No problem!<br>
+                    You want a pink and green color scheme? ... We'll find a way to make it work.<br><br>
+                    Check out some of our past work!
 
-        </div>
-        <div id="squareFrame">
-            <div id="topSquare" onclick="alert()"></div>
-            <div id="leftSquare"></div>
-            <div id="rightSquare"></div>
-            <div id="bottomSquare"></div>
+                </p>
+                <p id="selection3" hidden>
+                    We design, develop, launch, maintain, and everything in between!<br><br>
+                    We know that technology isn't everybody's thing. So we can take care of it for you!<br>
+                    You can sit back, give some thoughts and opinions and we'll handle the rest.<br><br>
+                    Rest assured, we'll get you all set up!<br><br>
+                    Check out some of our past work!
+
+                </p>
+                <p id="selection4" hidden>
+                    Most importantly, we reasonably price our services and ensure client satisfaction!<br><br>
+                    Times are hard, we won't break the bank for your needs. We like to help people and businesses, and our work reflects it.<br><br>
+                    Our top goal is customer satisfaction. We don't want you to be stuck with something you don't like<br>
+                    We'll keep you in the loop every step of the way, present you with options, and make sure that you love the final product!<br><br>
+                    Head on over to get a quote for your project!
+                </p>
+
+            </div>
+            
+            <div id="squareFrame">
+                
+                <div id="topSquare" onclick="toggleTextArea(this)"></div>
+                <div id="leftSquare" onclick="toggleTextArea(this)"></div>
+                <div id="rightSquare" onclick="toggleTextArea(this)"></div>
+                <div id="bottomSquare" onclick="toggleTextArea(this)"></div>
+                <div id="negSquare"><p style="margin-top: 40%;">Click Me!</p></div>
+            </div>
+                
         </div>
     </div>
-
 
     <div style="height: 30vh;"></div>
 
 
     <script>
+        const buttonIDs={
+            "topSquare":"selection1",
+            "leftSquare":"selection2",
+            "rightSquare":"selection3",
+            "bottomSquare":"selection4"
+        }
+        var firstClick=true
+
+        function toggleTextArea(object) {
+            var time=1500
+            if (firstClick==true) {openTextArea();firstClick=false;}
+            else {time=0}
+            const id=object.id
+            setTimeout(function(){
+                Object.keys(buttonIDs).forEach(function(key) {
+                    const text=document.getElementById(buttonIDs[key])
+
+                    if (id==key) {
+                        text.removeAttribute("hidden")
+                    }
+                    else {
+                        const button=document.getElementById(key)
+                        text.setAttribute("hidden", "true")
+                    }
+                })
+            }, time)
+            
+        }
+
+        function openTextArea() {
+            const div=document.getElementById("AlternatingText")
+            div.style.animation="expandLeft 1.5s ease 0s 1 normal forwards"
+
+        }
+        
 
     </script>
 </body>
