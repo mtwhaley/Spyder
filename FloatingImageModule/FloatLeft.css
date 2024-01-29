@@ -1,0 +1,50 @@
+
+
+.floatMain {
+    position: relative;
+    display: flex;
+    height: 50vh;
+    width: 95%;
+    margin: 15vh auto 0 auto;
+    transition: all 1s ease;
+    opacity: 0;
+    transform: translateY(10vh);
+    
+    
+}
+
+.floatMain.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.floatLeftImg {
+    min-width: 25vw;
+    height: 100%;
+    border-radius: 2vh;
+    margin-right: 5vh;
+    overflow: hidden;
+}
+
+.floatRightImg {
+    min-width: 25vw;
+    height: 100%;
+    background-color: red;
+    border-radius: 2vh;
+    margin-left: 5vh;
+    overflow: hidden;
+}
+
+.floatTextDiv {
+    background-color: #cbfed9;
+    border-radius: 2vh;
+    font-size: 3.4vh;
+}
+
+.floatTextDiv div {
+    margin-left: 5%;
+}
+
+.floatText {
+    margin: 5vh;
+}

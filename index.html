@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="Style/Header.css">
     <link rel="stylesheet" href="Style/Navigation.css">
     <link rel="stylesheet" href="Style/ButtonSquare.css">
+    <link rel="stylesheet" href="FloatingImageModule/FloatLeft.css">
 </head>
 <body>
     <div id="topNavigation">
@@ -38,16 +39,26 @@
 
     <div id="about">
         <div id="pictureFrame">
-            <img src="Images/GeoAbstract.jpg" alt="geo banner">
+            <img src="Images/SpiderWeb.jpg" alt="geo banner" style="height: 80vh; position: relative; top: -10vh;">
         </div>
         <div id="imageText">
-            <h1>
+            <h1 style="background-color: #363636; width: 50%; margin-left: auto; margin-right: auto; border-radius: 2vh; color: white;">
                 Natural web developers
             </h1>
         </div>
     </div>
 
-    <div id="info">
+    <div class="canvas" style="margin-top: 0; border-radius: 0 0 2vh 2vh;">
+        <p style="margin: 2vh 5vh 3vh 5vh; font-size: 3.4vh;">
+            Welcome to our web development website! Here, we are passionate about creating innovative and visually stunning websites that not only captivate audiences but also elevate businesses to new heights.
+            With our team of skilled developers and designers, we aim to deliver impeccable user experiences, seamless functionality, and striking designs that make your online presence truly remarkable.
+            Explore our services, discover the power of well-crafted websites, and let us help you bring your digital vision to life.
+        </p>
+    </div>
+
+    <!--
+
+    <div id="info" style="margin-top: 20vh;">
 
         <div id="buttonSquare">
             <div id="AlternatingText">
@@ -96,10 +107,133 @@
         </div>
     </div>
 
+-->
+
+    <div class="floatMain">
+        <div class="floatLeftImg">
+            <img src="Images/linkedin-sales-solutions-46bom4lObsA-unsplash.jpg">
+        </div>
+        <div class="floatTextDiv">
+            <p class="floatText">
+                Our web development services are tailored to meet your business objectives and exceed your expectations.
+                With a focus on meticulous planning, intuitive user interfaces, and cutting-edge technologies, we craft websites that make a lasting impression.
+                From responsive designs that seamlessly adapt across devices to optimized performance ensuring lightning-fast loading speeds, we prioritize delivering an exceptional user experience.
+                Our team of experienced developers is well-versed in a variety of frameworks and coding languages, ensuring versatility and customizability for each project.
+                Whether you need an e-commerce platform, a dynamic content management system, or a striking portfolio site, we combine creativity, functionality, and security to create a digital presence that truly represents your brand.
+                Trust us with your web development needs and let's take your online presence to new heights.
+
+            </p>
+        </div>
+    </div>
+
+    <div class="floatMain">
+        <div class="floatTextDiv">
+            <p class="floatText">
+                Design services: 
+            </p>
+            <div>
+                Website Design: Crafting visually stunning and user-friendly websites that reflect your brand and engage with your target audience.
+                <br><br>
+                Responsive Design: Creating websites that seamlessly adapt to different screen sizes and devices, ensuring a consistent user experience across platforms.
+                <br><br>
+                UI/UX Design: Focusing on creating seamless and intuitive user experiences through user interface design, wireframing, prototyping, and usability testing.
+            </div>
+
+        </div>
+        
+        <div class="floatRightImg">
+            <img src="Images/NotebookDesign.jpg">
+        </div>
+    </div>
+
+    <div class="floatMain">
+        <div class="floatLeftImg">
+            <img src="Images/computerImage.jpg">
+        </div>
+        <div class="floatTextDiv">
+            <p class="floatText">
+                Development services:
+            </p>
+            <div>
+                Custom Development: Tailoring websites to your specific needs, leveraging various programming languages and frameworks to ensure unique and optimized functionality.
+                <br><br>
+                E-commerce Solutions: Developing secure and scalable online stores with features like product catalog, shopping cart, payment integration, and inventory management.
+                <br><br>
+                Web Application Development: Creating dynamic and interactive web applications to streamline processes, enhance user engagement, and drive business growth.
+
+            </div>
+        
+        </div>
+    </div>
+
+
+    <div class="floatMain">
+        <div class="floatTextDiv">
+            <p class="floatText">
+                Maintenance services: <br>
+            </p>
+                <div>
+                    Content Management Systems (CMS): Building intuitive and robust CMS platforms that allow easy content editing, publishing, and site management.
+                    <br><br>
+                    Website Maintenance and Support: Providing ongoing technical support, security updates, and regular maintenance to keep your website running smoothly.
+
+                </div>
+                                
+
+        </div>
+        
+        <div class="floatRightImg">
+            <img src="Images/Screwdriver.jpg">
+        </div>
+    </div>
+
+
     <div style="height: 30vh;"></div>
 
 
     <script>
+
+        const divsToReveal=[document.getElementsByClassName("floatMain")]
+
+        function reveal() {
+
+
+            divsToReveal.forEach(function(divArray) {
+                for (var i=0;i<divArray.length;i++) {
+                
+
+                    const windowHeight=window.innerHeight
+                    const topPosition=divArray[i].getBoundingClientRect().top
+                    const visibilityBuffer=150
+
+
+                    const calc=windowHeight-visibilityBuffer
+                    console.log("calc: " + calc + "\ntop of div: "+topPosition)
+
+                    if (topPosition<windowHeight-visibilityBuffer) {
+                        divArray[i].classList.add("active")
+                        
+                    } else {
+                        divArray[i].classList.remove("active")
+                    }
+                
+                }
+            })
+        }
+
+
+
+        window.addEventListener("scroll",reveal)
+        window.addEventListener("keydown", (e)=> {
+            if (e.keyCode==70) {            //F key
+                
+            }
+        })
+
+
+
+
+        /*
         const buttonIDs={
             "topSquare":"selection1",
             "leftSquare":"selection2",
@@ -134,7 +268,7 @@
             div.style.animation="expandLeft 1.5s ease 0s 1 normal forwards"
 
         }
-        
+        */
 
     </script>
 </body>

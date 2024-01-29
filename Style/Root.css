@@ -4,6 +4,8 @@ body {
     width: 100%;
     font-size: 2.5vh;
     padding: 0;
+    margin: 0;
+
     
 }
 #pictureFrame {
@@ -13,6 +15,7 @@ body {
     width: 100%;
     height: 100%;
     z-index: 0;
+    
 
 
 
@@ -21,6 +24,22 @@ img {
     width: 100%;
     height: 100%;
     margin-left: 0;
+
+}
+
+.canvas {
+    width: 100%;
+    background-color: rgb(201, 201, 201);
+    text-align: center;
+    margin-top: 15vh;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    border-radius: 2vh;
+    max-width: 100%;
+
+    
 
 }
 
@@ -63,10 +82,9 @@ img {
     margin: 10vh 0 0 0;
     padding: 0 0 2vh 0;
     width: 100%;
-    height: 30vh;
+    height: 50vh;
     color: white;
     text-align: center;
     border-radius: 2vh 2vh 0 0;
     overflow: hidden;
-    left: -0.8vh;
 }
