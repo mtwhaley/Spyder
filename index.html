@@ -74,40 +74,25 @@
     <script src="SidebarModule/Sidebar.js"></script>
     <script>
 
-        const divsToReveal=[document.getElementsByClassName("floatMain")]
+        var unlock=0
+        var check=""
+        const pw="6568777378"
 
-        function reveal() {
-
-
-            divsToReveal.forEach(function(divArray) {
-                for (var i=0;i<divArray.length;i++) {
-                
-
-                    const windowHeight=window.innerHeight
-                    const topPosition=divArray[i].getBoundingClientRect().top
-                    const visibilityBuffer=150
-
-
-                    const calc=windowHeight-visibilityBuffer
-                    console.log("calc: " + calc + "\ntop of div: "+topPosition)
-
-                    if (topPosition<windowHeight-visibilityBuffer) {
-                        divArray[i].classList.add("active")
-                        
-                    } else {
-                        divArray[i].classList.remove("active")
-                    }
-                
-                }
-            })
-        }
-
-
-
-        window.addEventListener("scroll",reveal)
         window.addEventListener("keydown", (e)=> {
-            if (e.keyCode==70) {            //F key
-                
+            //<admin>
+            if (unlock<=0 && e.getModifierState("Shift") && e.keyCode==188) {
+                unlock=1
+                check=""
+            }
+            else if (unlock==1) {
+                if (e.getModifierState("Shift") && e.keyCode==190) {
+                    if (check==pw) {
+                        alert("unlock acheived")
+                    }
+                }
+                else if (e.keyCode!=16){
+                    check+=e.keyCode
+                }
             }
         })
 
