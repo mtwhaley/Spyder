@@ -1,0 +1,164 @@
+/*
+Add to HTML as first element:
+    <div class="topBar">
+        <div class="menuBars" onmouseover="recolorMenuBars(this)" onmouseleave="resetMenuBars(this)" onclick="toggleSidebar()">
+            <div class="menuBar"></div>
+            <div class="menuBar"></div>
+            <div class="menuBar"></div>
+        </div>
+    </div>
+    <div id="sidebarDiv">
+        <div id="sidebar"></div>
+        <button id="sidebarClose" onclick="toggleSidebar()">&times;</button>
+    </div>
+
+
+For footer Navigation:
+    <div id="footer" style="text-align: right; padding-right: 2vw;">
+        <div id="footNavInjection"></div>        
+    </div>
+
+
+    #footer {
+        margin-top: 15vh;
+        margin-bottom: 0;
+        font-size: 3vh;
+        text-align: center;
+        padding: 1vh 0 1vh 0;
+        background-color: var(--section-color);
+        border-radius: 0;
+    }
+*/
+
+
+
+@keyframes displaySidebar {
+    from {
+        left: -500px;
+    }
+    to {
+        left: 0;
+    }
+}
+@keyframes hideSidebar {
+    from {
+        left: 0;
+    }
+    to {
+        left: -500px;
+    }
+    
+}
+
+
+
+.navItemContainer {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    max-height: 100%;
+    padding-top: 5vh;
+}
+.navItem {
+    margin-top: 20vh;
+    width: 100%;
+    background-color: red;
+}
+
+.navigationButton {
+    width: 100%;
+    height: 10vh;
+    padding-right: 5vh;
+    border: none;
+    font-size: 3.5vh;
+    text-align: right;
+    color: white;
+    background-color: rgba(0,0,0,0);
+}
+.navigationButton:hover {
+    background-color: #bababa;
+}
+
+.topBar {
+    width: 100%;
+    height: 5vh;
+    /*background-color: rgba(50,50,50,0.8);*/
+    position: relative;
+    padding-top: 1vh;
+}
+#sidebarDiv {
+    position: fixed;
+    width: 450px;
+    max-width: 75vw;
+    height: 100vh;
+    z-index: 100;
+    top: 0;
+    text-align: right;
+    color: white;
+    font-size: 4vh;
+    left: -500px;
+    padding: 0;
+
+}
+
+
+#sidebarClose {
+    position: absolute;
+    top: -0.6vh;
+    right: -40px;
+    width: 50px;
+    height: 50px;
+    background-color: red;/*#383838;*/
+    border-radius: 0 2vh 2vh 0;
+    z-index: -1;
+    text-align: right;
+    font-size: 30px;
+    color: white
+}
+#sidebarClose:hover {
+    background-color: #ababab;
+}
+
+#sidebar{
+    margin-top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0b343d;
+    text-align: right;
+    color: white;
+    font-size: 4vh;
+    left: -400px;
+    border-right: 0.8vh solid #595959;
+    border-radius: 0 2vh 0 0;
+
+}
+#sidebar ul {
+    margin: 2vh 0 0 0;
+    padding-top: 3vh;
+    font-weight: bold;
+    list-style: none;
+}
+
+#sidebar li {
+    margin: 2vh 0 0 0;
+    height: 5vh;
+}
+
+.menuBars{
+    position: absolute;
+    right: 1vw;
+}
+
+.menuBar{
+    width: 35px;
+    height: 5px;
+    background-color: black;
+    margin: 0 0 6px 0;
+    border-radius: 1vh;
+}
+
+@media (max-width: 1024px) {
+    .navigationButton {
+        font-size: 2.6vh;
+    }
+}

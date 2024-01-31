@@ -8,19 +8,26 @@
     <link rel="stylesheet" href="Style/Root.css">
     <link rel="stylesheet" href="Style/Header.css">
     <link rel="stylesheet" href="Style/Navigation.css">
-    <link rel="stylesheet" href="Style/ButtonSquare.css">
-    <link rel="stylesheet" href="FloatingImageModule/FloatLeft.css">
+    <link rel="stylesheet" href="FloatingImageModule/AppearFloat.css">
+    <link rel="stylesheet" href="SidebarModule/Sidebar.css">
+    <link rel="stylesheet" href="Style/Footer.css">
 </head>
 <body>
-    <div id="topNavigation">
-        <div id="topNavButtons">
-            <a><button>Home</button></a>
-            |
-            <a><button>Showcase</button></a>
-            |
-            <a><button>Contact</button></a>
+
+
+    <div class="topBar">
+        <div class="menuBars" onmouseover="recolorMenuBars(this)" onmouseleave="resetMenuBars(this)" onclick="toggleSidebar()">
+            <div class="menuBar"></div>
+            <div class="menuBar"></div>
+            <div class="menuBar"></div>
         </div>
     </div>
+    <div id="sidebarDiv">
+        <div id="sidebar"></div>
+        <button id="sidebarClose" onclick="toggleSidebar()">&times;</button>
+    </div>
+
+
     <div id="header">
         <div id="headerLogo">
             <img src="SpiderModule/GreenSpider.png" alt="spyder web management services spider">
@@ -30,11 +37,6 @@
     </div>
     <div id="headerSpacer"></div>
 
-    <!--
-    <div class="slogan">
-        <p style="text-shadow: 0.2vh 0.2vh black;"><i>You know of a better web manager than a spyder?</i></p>
-    </div>
-    -->
 
 
     <div id="about">
@@ -56,141 +58,20 @@
         </p>
     </div>
 
-    <!--
-
-    <div id="info" style="margin-top: 20vh;">
-
-        <div id="buttonSquare">
-            <div id="AlternatingText">
-                <p id="selection1" hidden>
-                    We are here to help businesses and individuals with their web projects, websites, and web applications!<br><br>
-                    Not sure what the difference is? Don't worry about it! That's what we're here for!<br>
-                    If you need any help or have a job you need done that has anything to do with the net, we got you covered!<br><br>
-                    Head on over to get a quote for your project!
-                </p>
-                <p id="selection2" hidden>
-                    We fully customize to your needs!<br><br>
-                    Just like baking a cake, we develop from scratch! This allows full customization of whatever project you need done.<br><br>
-                    You want a turtle emblem? You got it!<br>
-                    You like tulips? No problem!<br>
-                    You want a pink and green color scheme? ... We'll find a way to make it work.<br><br>
-                    Check out some of our past work!
-
-                </p>
-                <p id="selection3" hidden>
-                    We design, develop, launch, maintain, and everything in between!<br><br>
-                    We know that technology isn't everybody's thing. So we can take care of it for you!<br>
-                    You can sit back, give some thoughts and opinions and we'll handle the rest.<br><br>
-                    Rest assured, we'll get you all set up!<br><br>
-                    Check out some of our past work!
-
-                </p>
-                <p id="selection4" hidden>
-                    Most importantly, we reasonably price our services and ensure client satisfaction!<br><br>
-                    Times are hard, we won't break the bank for your needs. We like to help people and businesses, and our work reflects it.<br><br>
-                    Our top goal is customer satisfaction. We don't want you to be stuck with something you don't like<br>
-                    We'll keep you in the loop every step of the way, present you with options, and make sure that you love the final product!<br><br>
-                    Head on over to get a quote for your project!
-                </p>
-
-            </div>
-            
-            <div id="squareFrame">
-                
-                <div id="topSquare" onclick="toggleTextArea(this)"></div>
-                <div id="leftSquare" onclick="toggleTextArea(this)"></div>
-                <div id="rightSquare" onclick="toggleTextArea(this)"></div>
-                <div id="bottomSquare" onclick="toggleTextArea(this)"></div>
-                <div id="negSquare"><p style="margin-top: 40%;">Click Me!</p></div>
-            </div>
-                
-        </div>
-    </div>
-
--->
-
-    <div class="floatMain">
-        <div class="floatLeftImg">
-            <img src="Images/linkedin-sales-solutions-46bom4lObsA-unsplash.jpg">
-        </div>
-        <div class="floatTextDiv">
-            <p class="floatText">
-                Our web development services are tailored to meet your business objectives and exceed your expectations.
-                With a focus on meticulous planning, intuitive user interfaces, and cutting-edge technologies, we craft websites that make a lasting impression.
-                From responsive designs that seamlessly adapt across devices to optimized performance ensuring lightning-fast loading speeds, we prioritize delivering an exceptional user experience.
-                Our team of experienced developers is well-versed in a variety of frameworks and coding languages, ensuring versatility and customizability for each project.
-                Whether you need an e-commerce platform, a dynamic content management system, or a striking portfolio site, we combine creativity, functionality, and security to create a digital presence that truly represents your brand.
-                Trust us with your web development needs and let's take your online presence to new heights.
-
-            </p>
-        </div>
-    </div>
-
-    <div class="floatMain">
-        <div class="floatTextDiv">
-            <p class="floatText">
-                Design services: 
-            </p>
-            <div>
-                Website Design: Crafting visually stunning and user-friendly websites that reflect your brand and engage with your target audience.
-                <br><br>
-                Responsive Design: Creating websites that seamlessly adapt to different screen sizes and devices, ensuring a consistent user experience across platforms.
-                <br><br>
-                UI/UX Design: Focusing on creating seamless and intuitive user experiences through user interface design, wireframing, prototyping, and usability testing.
-            </div>
-
-        </div>
-        
-        <div class="floatRightImg">
-            <img src="Images/NotebookDesign.jpg">
-        </div>
-    </div>
-
-    <div class="floatMain">
-        <div class="floatLeftImg">
-            <img src="Images/computerImage.jpg">
-        </div>
-        <div class="floatTextDiv">
-            <p class="floatText">
-                Development services:
-            </p>
-            <div>
-                Custom Development: Tailoring websites to your specific needs, leveraging various programming languages and frameworks to ensure unique and optimized functionality.
-                <br><br>
-                E-commerce Solutions: Developing secure and scalable online stores with features like product catalog, shopping cart, payment integration, and inventory management.
-                <br><br>
-                Web Application Development: Creating dynamic and interactive web applications to streamline processes, enhance user engagement, and drive business growth.
-
-            </div>
-        
-        </div>
-    </div>
 
 
-    <div class="floatMain">
-        <div class="floatTextDiv">
-            <p class="floatText">
-                Maintenance services: <br>
-            </p>
-                <div>
-                    Content Management Systems (CMS): Building intuitive and robust CMS platforms that allow easy content editing, publishing, and site management.
-                    <br><br>
-                    Website Maintenance and Support: Providing ongoing technical support, security updates, and regular maintenance to keep your website running smoothly.
-
-                </div>
-                                
-
-        </div>
-        
-        <div class="floatRightImg">
-            <img src="Images/Screwdriver.jpg">
-        </div>
-    </div>
 
 
     <div style="height: 30vh;"></div>
 
+    <div id="footer" style="text-align: right; padding-right: 2vw;">
+        <div id="footNavInjection"></div>      
+        <div style="text-align: right;">
+            <span style="color: white; font-size: 2vh;"><br>Copyright 2024 Spyder LLC. All rights reserved.</span>
+        </div>  
+    </div>
 
+    <script src="SidebarModule/Sidebar.js"></script>
     <script>
 
         const divsToReveal=[document.getElementsByClassName("floatMain")]
@@ -232,43 +113,6 @@
 
 
 
-
-        /*
-        const buttonIDs={
-            "topSquare":"selection1",
-            "leftSquare":"selection2",
-            "rightSquare":"selection3",
-            "bottomSquare":"selection4"
-        }
-        var firstClick=true
-
-        function toggleTextArea(object) {
-            var time=1500
-            if (firstClick==true) {openTextArea();firstClick=false;}
-            else {time=0}
-            const id=object.id
-            setTimeout(function(){
-                Object.keys(buttonIDs).forEach(function(key) {
-                    const text=document.getElementById(buttonIDs[key])
-
-                    if (id==key) {
-                        text.removeAttribute("hidden")
-                    }
-                    else {
-                        const button=document.getElementById(key)
-                        text.setAttribute("hidden", "true")
-                    }
-                })
-            }, time)
-            
-        }
-
-        function openTextArea() {
-            const div=document.getElementById("AlternatingText")
-            div.style.animation="expandLeft 1.5s ease 0s 1 normal forwards"
-
-        }
-        */
 
     </script>
 </body>
