@@ -19,7 +19,7 @@ navigation={
     },
     "contact": {
         sidebarText: "Contact",
-        href: ""
+        href: "Contact.html"
     }
     
 }

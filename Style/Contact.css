@@ -1,0 +1,16 @@
+#infoPost {
+    width: 100%;
+    text-align: center;
+}
+
+#contactForm {
+    width: 50%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: red;
+}
+
+#contactForm table {
+    
+}

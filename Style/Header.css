@@ -9,9 +9,9 @@
     top: 5vh;
     width: 100%;
     height: 15vw;
-    background-color: #363636;
+    background-color: black;/*#363636;*/
     margin: 0;
-    border: 0.4vh solid #020f00;
+    border: 0.4vh solid rgb(0, 255, 30);
     
     max-height: 125px;
 

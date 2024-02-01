@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spyder Web Management Services</title>
+
+
+    <link rel="stylesheet" href="Style/Root.css">
+    <link rel="stylesheet" href="Style/Header.css">
+    <link rel="stylesheet" href="Style/Navigation.css">
+    <link rel="stylesheet" href="SidebarModule/Sidebar.css">
+    <link rel="stylesheet" href="Style/Footer.css">
+    <link rel="stylesheet" href="Style/Contact.css">
+</head>
+<body>
+    <div class="topBar">
+        <div class="menuBars" onmouseover="recolorMenuBars(this)" onmouseleave="resetMenuBars(this)" onclick="toggleSidebar()">
+            <div class="menuBar"></div>
+            <div class="menuBar"></div>
+            <div class="menuBar"></div>
+        </div>
+    </div>
+    <div id="sidebarDiv">
+        <div id="sidebar"></div>
+        <button id="sidebarClose" onclick="toggleSidebar()">&times;</button>
+    </div>
+
+
+    <div id="header">
+        <div id="headerLogo">
+            <img src="SpiderModule/GreenSpider.png" alt="spyder web management services spider">
+            <div id="spiderBody"></div>
+        </div>
+        <div id="headerText"><i><span style="color: rgb(0,255,30);font-size: 5vw;">Spyder</span> Web Management</i></div>
+        <div id="subheader">
+            <span>
+                Contact
+            </span>
+        </div>
+    </div>
+    <div id="headerSpacer"></div>
+
+
+    <form id="contactForm">
+        <table>
+            <tr>
+                <td>First Name:</td>
+                <td>
+                    <input type="text">
+                </td>
+            </tr>
+        </table>
+
+    </form>
+
+    <div style="height: 10vh;"></div>
+
+    <div id="infoPost">
+        <p>
+            clientservice@spyderwms.com
+        </p>
+    </div>
+  
+    <div style="height: 5vh;"></div>
+
+    <div id="footer" style="text-align: right; padding-right: 2vw;">
+        <div id="footNavInjection"></div>      
+        <div style="text-align: right;">
+            <span style="color: white; font-size: 2vh;"><br>Copyright 2024 Spyder LLC. All rights reserved.</span>
+        </div>  
+    </div>
+
+
+    <script src="SidebarModule/Sidebar.js"></script>
+    <script>
+
+        const divsToReveal=[document.getElementsByClassName("floatMain")]
+
+        function reveal() {
+
+
+            divsToReveal.forEach(function(divArray) {
+                for (var i=0;i<divArray.length;i++) {
+                
+
+                    const windowHeight=window.innerHeight
+                    const topPosition=divArray[i].getBoundingClientRect().top
+                    const visibilityBuffer=150
+
+
+                    const calc=windowHeight-visibilityBuffer
+                    console.log("calc: " + calc + "\ntop of div: "+topPosition)
+
+                    if (topPosition<windowHeight-visibilityBuffer) {
+                        divArray[i].classList.add("active")
+                        
+                    } else {
+                        divArray[i].classList.remove("active")
+                    }
+                
+                }
+            })
+        }
+
+
+
+        window.addEventListener("scroll",reveal)
+        window.addEventListener("keydown", (e)=> {
+            if (e.keyCode==70) {            //F key
+                
+            }
+        })
+
+
+
+
+    </script>
+</body>
+</html>
