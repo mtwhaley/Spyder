@@ -121,7 +121,6 @@
 
 
                     const calc=windowHeight-visibilityBuffer
-                    console.log("calc: " + calc + "\ntop of div: "+topPosition)
 
                     if (topPosition<windowHeight-visibilityBuffer) {
                         divArray[i].classList.add("active")
@@ -174,7 +173,6 @@
         window.addEventListener("resize", function() {resizeHeader()})
         window.addEventListener("keydown", (e)=> {
             if (e.keyCode==70) {            //F key
-                console.log(document.getElementById("headerLogo").style.height)
             }
         })
 

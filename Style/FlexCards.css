@@ -5,7 +5,7 @@
     width: 100%;
     justify-content: space-around;
 
-    margin-top: 15vh;
+    margin-top: 10vh;
 
 }
 
@@ -14,6 +14,7 @@
 }
 
 .navCard {
+    margin-top: 5vh;
     height: 50vh;
     width: 40vh;
     font-size: 7vh;

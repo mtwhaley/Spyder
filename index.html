@@ -34,7 +34,7 @@
             <img src="SpiderModule/GreenSpider.png" alt="spyder web management services spider">
             <div id="spiderBody"></div>
         </div>
-        <div id="headerText"><i><span style="color: rgb(61, 224, 16);font-size: 5vw;">Spyder</span> Web Management</i></div>
+        <div id="headerText"><i><span style="color: rgb(61, 224, 16);font-size: 75px;">Spyder</span><span id="headerBreakpoint"></span> Web Management</i></div>
     </div>
     <div id="headerSpacer"></div>
 
@@ -45,7 +45,7 @@
             <img src="Images/SpiderWeb.jpg" alt="geo banner" style="height: 80vh; position: relative; top: -10vh;">
         </div>
         <div id="imageText">
-            <h1 style="background-color: #363636; width: 50%; margin-left: auto; margin-right: auto; border-radius: 2vh; color: white;">
+            <h1 style="background-color: #363636; width: 50%; min-width: 220px; margin-left: auto; margin-right: auto; border-radius: 2vh; color: white;">
                 Natural web developers
             </h1>
         </div>
@@ -80,7 +80,7 @@
                 <span>Pricing</span>
             </div>
         </a>
-        <a href="">
+        <a href="Contact.html">
             <div class="navCard">
                 <img src="Images/Contact.jpg">
                 <span>Contact</span>
@@ -105,6 +105,45 @@
         var unlock=0
         var check=""
         const pw="6568777378"
+
+        function loadFunction() {
+            resizeHeader()
+        }
+
+        function resizeHeader() {
+            const headTextStyle=document.getElementById("headerText").style
+            const logo=document.getElementById("headerLogo").style
+            const logoHeight=document.getElementById("headerLogo").clientHeight
+            const headerHeight=document.getElementById("header").clientHeight
+
+            
+            if (window.innerWidth<=1390) {
+                document.getElementById("headerBreakpoint").innerHTML="<br>"
+
+                
+
+                headTextStyle.textAlign="center"
+                headTextStyle.fontSize="25px"
+            }
+            else {
+                document.getElementById("headerBreakpoint").innerHTML=""
+                headTextStyle.textAlign="left"
+                headTextStyle.fontSize="4vw"
+
+            }
+
+            const heightDifference=headerHeight-logoHeight
+            if (heightDifference>10) {
+                logo.top="10px"
+            }
+            else {
+
+                logo.top=(heightDifference/2)+"px"
+            }
+        }
+
+
+        window.addEventListener("resize", function() {resizeHeader()})
 
         window.addEventListener("keydown", (e)=> {
             //<admin>

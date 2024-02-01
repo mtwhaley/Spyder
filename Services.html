@@ -32,7 +32,7 @@
             <img src="SpiderModule/GreenSpider.png" alt="spyder web management services spider">
             <div id="spiderBody"></div>
         </div>
-        <div id="headerText"><i><span style="color: rgb(0,255,30);font-size: 5vw;">Spyder</span> Web Management</i></div>
+        <div id="headerText"><i><span style="color: rgb(0,255,30);font-size: 75px;">Spyder</span><span id="headerBreakpoint"></span> Web Management</i></div>
         <div id="subheader">
             <span>
                 Services
@@ -137,6 +137,47 @@
 
         const divsToReveal=[document.getElementsByClassName("floatMain")]
 
+
+        function loadFunction() {
+            resizeHeader()
+        }
+
+        function resizeHeader() {
+            const headTextStyle=document.getElementById("headerText").style
+            const logo=document.getElementById("headerLogo").style
+            const logoHeight=document.getElementById("headerLogo").clientHeight
+            const headerHeight=document.getElementById("header").clientHeight
+
+
+            
+            if (window.innerWidth<=1390) {
+                document.getElementById("headerBreakpoint").innerHTML="<br>"
+
+                
+
+                headTextStyle.textAlign="center"
+                headTextStyle.fontSize="25px"
+            }
+            else {
+                document.getElementById("headerBreakpoint").innerHTML=""
+                headTextStyle.textAlign="left"
+                headTextStyle.fontSize="4vw"
+
+            }
+
+            const heightDifference=headerHeight-logoHeight
+            if (heightDifference>10) {
+                logo.top="10px"
+            }
+            else {
+
+                logo.top=(heightDifference/2)+"px"
+            }
+        }
+
+
+        window.addEventListener("resize", function() {resizeHeader()})
+
         function reveal() {
 
 
@@ -150,7 +191,6 @@
 
 
                     const calc=windowHeight-visibilityBuffer
-                    console.log("calc: " + calc + "\ntop of div: "+topPosition)
 
                     if (topPosition<windowHeight-visibilityBuffer) {
                         divArray[i].classList.add("active")
