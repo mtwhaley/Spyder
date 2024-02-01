@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="Style/Footer.css">
     <link rel="stylesheet" href="Style/Contact.css">
 </head>
-<body>
+<body onload="loadFunction()">
     <div class="topBar">
         <div class="menuBars" onmouseover="recolorMenuBars(this)" onmouseleave="resetMenuBars(this)" onclick="toggleSidebar()">
             <div class="menuBar"></div>
@@ -32,7 +32,7 @@
             <img src="SpiderModule/GreenSpider.png" alt="spyder web management services spider">
             <div id="spiderBody"></div>
         </div>
-        <div id="headerText"><i><span style="color: rgb(0,255,30);font-size: 5vw;">Spyder</span> Web Management</i></div>
+        <div id="headerText"><i><span style="color: rgb(0,255,30);font-size: 75px;">Spyder</span><span id="headerBreakpoint"></span> Web Management</i></div>
         <div id="subheader">
             <span>
                 Contact
@@ -47,6 +47,15 @@
     <form id="contactForm">
         <table>
             <tr>
+                <td colspan="2">
+                    <p>
+                        <i>
+                            If you are contacting to receive a quote on a project, please submit a <a href="">job form</a>
+                        </i>
+                    </p>
+                </td>
+            </tr>
+            <tr>
                 <td style="text-align: right;">First Name:</td>
                 <td style="text-align: left;">
                     <input type="text">
@@ -59,26 +68,34 @@
                 </td>
             </tr>
             <tr>
-                <td>Message:</td>
-                <td>
-                    <textarea cols="40" rows="5"></textarea>
+                <td style="text-align: center;" colspan="2">Message:</td>
+            </tr>
+            <tr>
+                <td style="padding-bottom: 5vh;text-align: center;" colspan="2">
+                    <textarea rows="5"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="padding-bottom: 5vh;">
+                    <input type="submit" value="send">
                 </td>
             </tr>
         </table>
 
     </form>
 
-    <div style="height: 10vh;"></div>
+    <div style="height: 15vh;"></div>
 
     <div id="infoPost">
         <p>
-            service@spyderwms.com
+            or contact us at<br>
+            <b>
+                service@spyderwms.com
+            </b>
         </p>
     </div>
-  
-    <div style="height: 5vh;"></div>
 
-    <div id="footer" style="text-align: right; padding-right: 2vw;">
+    <div id="footer" style="text-align: right; padding-right: 2vw; margin-top: 0;">
         <div id="footNavInjection"></div>      
         <div style="text-align: right;">
             <span style="color: white; font-size: 2vh;"><br>Copyright 2024 Spyder LLC. All rights reserved.</span>
@@ -117,12 +134,47 @@
             })
         }
 
+        function loadFunction() {
+            resizeHeader()
+        }
+
+        function resizeHeader() {
+            const headTextStyle=document.getElementById("headerText").style
+            const logo=document.getElementById("headerLogo").style
+            const logoHeight=document.getElementById("headerLogo").clientHeight
+            const headerHeight=document.getElementById("header").clientHeight
+
+            
+            if (window.innerWidth<=1390) {
+                document.getElementById("headerBreakpoint").innerHTML="<br>"
+
+                
+
+                headTextStyle.textAlign="center"
+                headTextStyle.fontSize="25px"
+            }
+            else {
+                document.getElementById("headerBreakpoint").innerHTML=""
+                headTextStyle.textAlign="left"
+                headTextStyle.fontSize="4vw"
+
+            }
+
+            const heightDifference=headerHeight-logoHeight
+            if (heightDifference>10) {
+                logo.top="10px"
+            }
+            else {
+
+                logo.top=(heightDifference/2)+"px"
+            }
+        }
 
 
-        window.addEventListener("scroll",reveal)
+        window.addEventListener("resize", function() {resizeHeader()})
         window.addEventListener("keydown", (e)=> {
             if (e.keyCode==70) {            //F key
-                
+                console.log(document.getElementById("headerLogo").style.height)
             }
         })
 
