@@ -10,7 +10,7 @@ navigation={
     },
     "showcase": {
         sidebarText: "Past work",
-        href: ""
+        href: "Showcase.html"
     },
     "price": {
         sidebarText: "Pricing",
