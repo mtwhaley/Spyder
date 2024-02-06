@@ -1,0 +1,8 @@
+.blackLink {
+    color: black;
+    text-decoration: none;
+}
+
+.blackLink:hover {
+    text-decoration: underline;
+}
