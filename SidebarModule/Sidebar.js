@@ -15,7 +15,7 @@ navigation={
     "price": {
         sidebarText: "Pricing",
         footerText: "Pricing",
-        href: ""
+        href: "Pricing.html"
     },
     "contact": {
         sidebarText: "Contact",
