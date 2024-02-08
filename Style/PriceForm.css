@@ -1,0 +1,14 @@
+.formDiv {
+    min-height: 40vh;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+
+    background-color: red;
+    border-radius: 2vh;
+}
+
+.formDiv table {
+    margin-left: auto;
+    margin-right: auto;
+}
