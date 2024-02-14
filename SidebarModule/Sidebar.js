@@ -2,19 +2,19 @@
 navigation={
     "home": {
         sidebarText: "Home",
-        href: "index.html"
+        href: "/"
     },
     "services": {
         sidebarText: "Services",
-        href: "Services.html"
+        href: "/Services.html"
     },
     "showcase": {
         sidebarText: "Past work",
-        href: "Showcase.html"
+        href: "/Showcase.html"
     },
     "contact": {
         sidebarText: "Contact",
-        href: "Contact.html"
+        href: "/Contact.html"
     }
     
 }
