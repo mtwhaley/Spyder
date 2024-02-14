@@ -12,11 +12,6 @@ navigation={
         sidebarText: "Past work",
         href: "Showcase.html"
     },
-    "price": {
-        sidebarText: "Pricing",
-        footerText: "Pricing",
-        href: "Pricing.html"
-    },
     "contact": {
         sidebarText: "Contact",
         href: "Contact.html"
