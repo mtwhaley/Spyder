@@ -94,6 +94,7 @@
 
 
     <script src="SidebarModule/Sidebar.js"></script>
+    <script src="FloatingImageModule/ResponsiveFloat.js"></script>
     <script>
 
         const divsToReveal=document.getElementsByClassName("floatMain")
@@ -115,6 +116,7 @@
         
         function loadFunction() {
             resizeHeader()
+            rewireFloatDivs()
         }
 
         function resizeHeader() {
@@ -150,9 +152,10 @@
         }
 
 
-        window.addEventListener("resize", function() {resizeHeader()})
+        window.addEventListener("resize", function() {resizeHeader(); rewireFloatDivs();})
         window.addEventListener("keydown", (e)=> {
             if (e.keyCode==70) {            //F key
+                console.log(window.innerWidth)
             }
         })
 

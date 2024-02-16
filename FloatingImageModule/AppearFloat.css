@@ -43,6 +43,7 @@
     border-radius: 2vh;
     font-size: 3.4vh;
     padding-bottom: 3vh;
+    width: 100%;
 }
 
 .floatTextDiv div {
@@ -56,6 +57,9 @@
 
 
 @media (max-width: 1024px) {
+    .floatMain {
+        
+    }
     .floatLeftImg, .floatRightImg {
         width: 40vw;
         min-width: 40vw;
@@ -64,6 +68,7 @@
         margin-right: 2%;
         margin-left: -5vh;
         margin-top: 5.5vh;
+        
     }
 
 }
